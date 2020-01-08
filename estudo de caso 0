@@ -53,12 +53,12 @@ int main(void) {
 }
 
 
-Sera analizado nesse codigo o comportamento do bloco while e switch, e a funcao getchar.
+Sera analisado nesse codigo o comportamento do bloco while e switch, e a funcao getchar.
 
 Esse programa simples em C captura as notas digitadas, avalia se o que esta armazenado na variavel nota é um caracter EOF,
 caso seja falsa a condiçao, ele prossegue com o bloco de comando seguido de uma estrutura de condição multipla chamada switch.
 
-Partindo para a analize:
+Partindo para a analise:
 
 Dentro do argumento do while temos uma expressao de comparação:
 	
