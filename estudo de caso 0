@@ -63,78 +63,77 @@ Partindo para a analize:
 	
 	while((nota = getchar()) != EOF) 
 	
-	a variavel 'nota' esta sendo inicializada atraves da função getchar(), essa função le apenas o primeiro caractere do buffer de entrada,
-  o buffer de entrada é o espaço na memoria que ficam os dados de entradas fornecido por um dispositivo de entrada padrão(stdin)
-  que nesse caso é o teclado, o conteudo pode ser visto na tela do terminal. A inicialização da variavel fica contida dentro de
-  parenteses, caso contrario voce recebera o seguinte aviso do compilador "warning: using the result of an assignment as condition
-  without parentheses [-Wparentheses]".
+a variavel 'nota' esta sendo inicializada atraves da função getchar(), essa função le apenas o primeiro caractere do buffer de entrada,
+o buffer de entrada é o espaço na memoria que ficam os dados de entradas fornecido por um dispositivo de entrada padrão(stdin)
+que nesse caso é o teclado, o conteudo pode ser visto na tela do terminal. A inicialização da variavel fica contida dentro de
+parenteses, caso contrario voce recebera o seguinte aviso do compilador "warning: using the result of an assignment as condition
+without parentheses [-Wparentheses]".
   
-	A variavel, apos alimentada, sera comparada a constante inteira simbolica EOF que cujo valor é -1.
+A variavel, apos alimentada, sera comparada a constante inteira simbolica EOF que cujo valor é -1.
 	
-	Seguindo... o bloco if avalia se o valor de 'nota' é um caracter de nova linha '\n'.
+Seguindo... o bloco if avalia se o valor de 'nota' é um caracter de nova linha '\n'.
 	
-		Caracteres de nova linha sao inseridos automaticamente no buffer de entrada pela tecla ENTER.
+	Caracteres de nova linha sao inseridos automaticamente no buffer de entrada pela tecla ENTER.
 		
-	Caso posittivo, sera pre-incrementada a variavel linhas, que contara a qunatidade de \n inserida, e exibido o valor atual.
+Caso posittivo, sera pre-incrementada a variavel linhas, que contara a qunatidade de \n inserida, e exibido o valor atual.
 	
-	por que usar esse if?
-		sera necessario para entendermos o funcionamento do getchar
+por que usar esse if?
+	sera necessario para entendermos o funcionamento do getchar
 		
-	quando digitamos a letra A por exemplo, ela é atribuida a 'nota', e avaliada, apos isso, a variavel 'nota' é usada no switch,
-  que avaliara o seu valor, e se de acordo com um dos 'case's sera executado o comando de incrementação, e um break, o break interromepe
-  o bloco de comando do switch e vai ate o fim do bloco while, caso nao utilizemos o break, sera executado todos os demais comandos
-  das linhas abaixo. se ficou curioso pode tentar executar sem o break!
+quando digitamos a letra A por exemplo, ela é atribuida a 'nota', e avaliada, apos isso, a variavel 'nota' é usada no switch,
+que avaliara o seu valor, e se de acordo com um dos 'case's sera executado o comando de incrementação, e um break, o break interromepe
+o bloco de comando do switch e vai ate o fim do bloco while, caso nao utilizemos o break, sera executado todos os demais comandos
+das linhas abaixo. se ficou curioso pode tentar executar sem o break!
 	
 	O seguite trecho:
 	
-		"
-			case '\n':
-			case '\t':
-			case ' ': break;
-		"
+	"
+		case '\n':
+		case '\t':
+		case ' ': break;
+	"
 		
-	Ignora os caracteres \n \t e ' ' que seria o espaço, mas porque explicitar isso?
-	lembra que o getchar le apenas o 1º valor do buff de entrada?
-	então, quando digitamos um caractere e damos enter, no buffer de entrada é armazenado o caractere digitado por nos, e o '\n'(ENTER),
-  esse valor permanece no buffer mesmo quando o primeiro caractere é processado, e na proxima execução do
-  while ele é armazenado na variavel 'notas' pela função getchar, em quanto houver dados no buffer getchar estara lendo ele,
-  como o buffer nao foi apagado apos a primeira iteracao do while, o caractere de nova linha é processado,
-  por isso explicitamos o case \n, para que esse caractere seja ignorado e seja executada a proxima iteracao.
-  Só é pedido para entrar um novo caractere depois que o buffer de entrada é esvaziado.
+Ignora os caracteres \n \t e ' ' que seria o espaço, mas porque explicitar isso?
+O getchar le apenas o 1º valor do buff de entrada, então, quando digitamos um caractere e damos enter, no buffer de entrada é armazenado
+o caractere digitado por nos, e o '\n'(ENTER), esse valor permanece no buffer mesmo quando o primeiro caractere é processado,
+e na proxima execução do while ele é armazenado na variavel 'notas' pela função getchar, em quanto houver dados no buffer getchar estara
+lendo ele, como o buffer nao foi apagado apos a primeira iteracao do while, o caractere de nova linha é processado, por isso explicitamos
+o case \n, para que esse caractere seja ignorado e seja executada a proxima iteracao.
+Só é pedido para entrar um novo caractere depois que o buffer de entrada é esvaziado.
 	
-	o bloco if conta quantas vezes o '\n' é inserido, simplesmente para ilustrar oq foi dito acima, quando digitamos 'b' por exemplo,
-  ele é processado pelos blocos, e na proxima iteração o caractere '\n' é processado, quando chega na 3º iteracao, é pedido pra entrar
-  um novo carctere.
+o bloco if conta quantas vezes o '\n' é inserido, simplesmente para ilustrar oq foi dito acima, quando digitamos 'b' por exemplo,
+ele é processado pelos blocos, e na proxima iteração o caractere '\n' é processado, quando chega na 3º iteracao, é pedido pra entrar
+um novo carctere.
 	
-	"""
-	
-		digite um caractere:
-		
-		digitando A, pressionando ENTER
-		
-		buffer> |A|\n|
-		
-		processando A
-		
-		incrementando variavel 'a' "bloco case 'a'"
-		
-		proxima iteracao do while
-		
-		buffer |\n|
-		
-		processando '\n'
-		
-		executando o if
-		
-		incrementando variavel 'linhas'
-		
-		executando comando do bloco 'case '\n':'
-		
-		proxima iteracao do while
-		
-		buffer ||
-		
-		digite outro caractere
-		
-		...
-	"""
+"""
+
+	digite um caractere:
+
+	digitando A, pressionando ENTER
+
+	buffer> |A|\n|
+
+	processando A
+
+	incrementando variavel 'a' "bloco case 'a'"
+
+	proxima iteracao do while
+
+	buffer |\n|
+
+	processando '\n'
+
+	executando o if
+
+	incrementando variavel 'linhas'
+
+	executando comando do bloco 'case '\n':'
+
+	proxima iteracao do while
+
+	buffer ||
+
+	digite outro caractere
+
+	...
+"""
