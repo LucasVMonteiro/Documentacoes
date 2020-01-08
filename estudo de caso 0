@@ -59,11 +59,12 @@ Esse programa simples em C captura as notas digitadas, avalia se o que esta arma
 caso seja falsa a condiçao, ele prossegue com o bloco de comando seguido de uma estrutura de condição multipla chamada switch.
 
 Partindo para a analize:
-	dentro do argumento do while temos uma expressao de comparação
+
+Dentro do argumento do while temos uma expressao de comparação:
 	
 	while((nota = getchar()) != EOF) 
 	
-a variavel 'nota' esta sendo inicializada atraves da função getchar(), essa função le apenas o primeiro caractere do buffer de entrada,
+A variavel 'nota' esta sendo inicializada atraves da função getchar(), essa função le apenas o primeiro caractere do buffer de entrada,
 o buffer de entrada é o espaço na memoria que ficam os dados de entradas fornecido por um dispositivo de entrada padrão(stdin)
 que nesse caso é o teclado, o conteudo pode ser visto na tela do terminal. A inicialização da variavel fica contida dentro de
 parenteses, caso contrario voce recebera o seguinte aviso do compilador "warning: using the result of an assignment as condition
