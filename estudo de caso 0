@@ -49,3 +49,6 @@ int main(void) {
   printf("Notas A: %d\nNotas B: %d\nNotas C: %d\n",a,b,c);
   return 0;
 }
+
+
+//Esse codigo foi tirado do livro: "C - Como Programar 6ª Ed Deitel & Deitel"
