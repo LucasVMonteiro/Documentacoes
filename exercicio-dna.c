@@ -1,3 +1,22 @@
+/*
+
+Esse codigo é a resposta para o seguinte exercicio proposto: 
+"
+O DNA é um composto organico cujas molecusa contem as instrucoes ACCCA-
+CAACA geneticas que coordenam o desenvolvimento e funcionamento de todos os
+seres TGGGTGTTGT vivos e alguns virus, e que transmitem as caracteristicas
+hereditarias de cada ser vivo. As quatro bases encontradas no DNA sao a adenina
+(A), citosina (C), guanina (G) e timina (T). A adenina liga-se exclusivamente à
+timina e a citosina liga-se sempre à guanina. Sabendo-se que o DNA é composto
+por 2 lados um deles somente com adenina (A) e citosina (C), e o outro somente com guanina (G) e timina (T), um modo de armazenar estes dados de forma
+alinha é utilizar os índices pares para um lado da fita e os índices ímpares para outro. Faça uma função que receba como parametro uma string. A função de-
+verá verificar (1) se os índices pares contem somente A's e C's e (2) se depois de um A sempre tem um T e depois de um C sempre tem um G. Neste caso,
+a funcao devera imprimir na tela "SEQUENCIA CORRETO"; caso contrario,
+devera imprimir "SEQUENCIA INCORRETO".
+"
+*/
+
+
 #include <stdio.h>
 #include <string.h>
 
